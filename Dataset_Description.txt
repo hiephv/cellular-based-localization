@@ -1,0 +1,25 @@
+We conducted experiments using two independent datasets collected on different days and in different areas to evaluate the effectiveness of the proposed method.
+Dataset #1: Collected from April 4 to 8, 2025, in an urban area, with a total of 21,155 records sampled at regular intervals.
+Dataset #2: Collected on October 9, 2025, in a different urban area, consisting of 1,470 records, also sampled at regular intervals.
+
+Each record in the dataset corresponds to a measurement made by the mobile device. 
+The format of each data record is:
+(id, lat, lon, timestamp, n, LAC1, CID1, Lat1, Lon1, RSSI1, ..., LACn, CIDn, Latn, Lonn, RSSIn)
+
+Where:
+1. id: The index of the measurement (unique identifier for the measurement).
+2. lat: GPS latitude of the device when the measurement was taken.
+3. lon: GPS longitude of the device when the measurement was taken.
+4. timestamp: The time when the measurement was recorded.
+5. n: The number of cell towers (cells) observed by the device during the measurement.
+6. LACi, CIDi, Lat_i, Lon_i, RSSIi (for i from 1 to n):
+	- LAC: Location Area Code associated with each cell.
+	- CID: Cell Identifier for each cell tower.
+	- Lat_i, Lon_i: Latitude and Longitude of each cell tower, retrieved via services like OpenCellID, FindCellID, or Geolocation APIs.
+	- RSSI: Received Signal Strength Indicator for each cell tower, which is used to measure signal strength from the cell tower.
+	
+Data Collection:
+	- Environment: The measurements were collected using the mobile scanning application in the urban area of Hanoi City. 
+	The environment is characterized by heavy vehicle traffic, people, and surrounding buildings, affecting signal propagation.
+	- Application: The mobile device scans for GSM cell towers and reports relevant data about the towers’ LAC, CID, RSSI, and the device's GPS location.
+	- Driving Method: Data was collected by driving around Hanoi City on a car or motorbike with the application running on the device.
